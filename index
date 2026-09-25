@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembahasan Soal Latihan Mandiri 1.1</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-blue: #3498db;
+            --accent-green: #27ae60;
+            --bg-light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+        .item {
+            margin-bottom: 35px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        .question {
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 0 4px 4px 0;
+        }
+        .answer {
+            padding: 0 20px;
+        }
+        .answer-title {
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .question {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+                background-color: var(--bg-light) !important;
+            }
+            .item {
+                border-bottom: none;
+            }
+        }
+    </style>
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+    <h1>Pembahasan Soal Olimpiade Matematika</h1>
+
+    <!-- Nomor 1 -->
+    <div class="item">
+        <div class="question">
+            1. Nilai $26^2 - 25^2 + 24^2 - 23^2 + ... + 4^2 - 3^2 + 2^2 - 1^2 = ....$
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Gunakan sifat selisih kuadrat $a^2 - b^2 = (a-b)(a+b)$.</p>
+            <p>$(26^2 - 25^2) + (24^2 - 23^2) + ... + (2^2 - 1^2)$<br>
+            $= (26-25)(26+25) + (24-23)(24+23) + ... + (2-1)(2+1)$</p>
+            <p>Karena $(a-b) = 1$ untuk setiap pasangan, persamaannya menjadi deret penjumlahan:<br>
+            $= 51 + 47 + 43 + ... + 3$</p>
+            <p>Jika diuraikan dalam bentuk awalnya, ini sama dengan $26 + 25 + 24 + ... + 2 + 1$.<br>
+            Gunakan rumus jumlah deret $S_n = \frac{n(n+1)}{2}$:<br>
+            $S_{26} = \frac{26 \times 27}{2} = 351$.</p>
+            <p><strong>Jawaban: A (351)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 2 -->
+    <div class="item">
+        <div class="question">
+            2. Jika $yz : xz : xy = 1 : 2 : 3$, maka $\frac{x}{yz} : \frac{y}{xz} = ....$
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Bentuk yang ditanyakan disamakan penyebutnya menjadi $\frac{x^2}{xyz} : \frac{y^2}{xyz}$, sehingga perbandingannya hanya bergantung pada $x^2 : y^2$.</p>
+            <p>Dari persamaan awal yang diketahui, ambil rasio dua variabel pertama:<br>
+            $\frac{xz}{yz} = \frac{2}{1} \implies \frac{x}{y} = 2$.</p>
+            <p>Maka nilai $x^2 : y^2 = 2^2 : 1^2 = 4 : 1$.</p>
+            <p><strong>Jawaban: E (4 : 1)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 3 -->
+    <div class="item">
+        <div class="question">
+            3. $\frac{1}{2\sqrt{1}+1\sqrt{2}} + \frac{1}{3\sqrt{2}+2\sqrt{3}} + ... + \frac{1}{9\sqrt{8}+8\sqrt{9}} = ....$
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Rasionalkan bentuk umumnya, $\frac{1}{(n+1)\sqrt{n} + n\sqrt{n+1}}$.<br>
+            Faktorkan penyebut: $\sqrt{n(n+1)}(\sqrt{n+1} + \sqrt{n})$.</p>
+            <p>Kalikan dengan bentuk sekawannya ($\sqrt{n+1} - \sqrt{n}$):<br>
+            $= \frac{\sqrt{n+1} - \sqrt{n}}{\sqrt{n(n+1)}((n+1)-n)} = \frac{1}{\sqrt{n}} - \frac{1}{\sqrt{n+1}}$.</p>
+            <p>Deret ini adalah deret yang saling meniadakan (<em>telescoping sum</em>):<br>
+            $\left( \frac{1}{\sqrt{1}} - \frac{1}{\sqrt{2}} \right) + \left( \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{3}} \right) + ... + \left( \frac{1}{\sqrt{8}} - \frac{1}{\sqrt{9}} \right)$.</p>
+            <p>Semua suku tengah akan habis, menyisakan $1 - \frac{1}{\sqrt{9}} = 1 - \frac{1}{3} = \frac{2}{3}$.</p>
+            <p><strong>Jawaban: A (2/3)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 4 -->
+    <div class="item">
+        <div class="question">
+            4. Jika $5! = 5 \times 4 \times 3 \times 2 \times 1$ dan $S = 1! + 2! + 3! + ... + 99!$, maka angka satuan dari $S$ adalah ....
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Nilai faktorial mulai dari $5! = 120$ dan seterusnya selalu memiliki angka satuan 0 karena mengandung perkalian $5 \times 2$.</p>
+            <p>Maka, angka satuan dari $S$ hanya ditentukan oleh penjumlahan suku $1!$ hingga $4!$:<br>
+            $1! = 1$<br>
+            $2! = 2$<br>
+            $3! = 6$<br>
+            $4! = 24$</p>
+            <p>Total penjumlahan $1 + 2 + 6 + 24 = 33$. Angka satuannya adalah 3.</p>
+            <p><strong>Jawaban: D (3)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 5 -->
+    <div class="item">
+        <div class="question">
+            5. Diketahui $f(x) = ax^7 + bx^3 + cx - 5$. Jika $f(-7) = 7$, maka $f(7) = ....$
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Masukkan $x = -7$ ke fungsi awal:<br>
+            $a(-7)^7 + b(-7)^3 + c(-7) - 5 = 7$<br>
+            $-(a7^7 + b7^3 + c7) - 5 = 7$<br>
+            $-(a7^7 + b7^3 + c7) = 12 \implies a7^7 + b7^3 + c7 = -12$.</p>
+            <p>Kemudian substitusi kelompok koefisien ini untuk mencari $f(7)$:<br>
+            $f(7) = a7^7 + b7^3 + c7 - 5 = (-12) - 5 = -17$.</p>
+            <p><strong>Jawaban: A (-17)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 6 -->
+    <div class="item">
+        <div class="question">
+            6. Banyaknya himpunan $x$ yang memenuhi $\{1, 2\} \subseteq x \subseteq \{1, 2, 3, 4, 5\}$ adalah ....
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Himpunan $x$ harus dan pasti memuat angka 1 dan 2 sebagai irisannya. Angka yang tersisa untuk dikombinasikan adalah $\{3, 4, 5\}$.</p>
+            <p>Banyaknya himpunan bagian dari $\{3, 4, 5\}$ yang bisa dibentuk untuk mendampingi $\{1, 2\}$ adalah $2^3 = 8$ himpunan.</p>
+            <p><strong>Jawaban: C (8)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 7 -->
+    <div class="item">
+        <div class="question">
+            7. Jika $a_1 = 2$, $a_2 = 5$, dan $a_{n+2} = a_{n+1} - a_n$, maka $a_{2000} = ....$
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Temukan pola barisannya:<br>
+            $a_1 = 2$<br>
+            $a_2 = 5$<br>
+            $a_3 = 5 - 2 = 3$<br>
+            $a_4 = 3 - 5 = -2$<br>
+            $a_5 = -2 - 3 = -5$<br>
+            $a_6 = -5 - (-2) = -3$<br>
+            $a_7 = -3 - (-5) = 2$<br>
+            $a_8 = 2 - (-3) = 5$</p>
+            <p>Terdapat pola berulang setiap 6 suku yaitu $(2, 5, 3, -2, -5, -3)$. Karena $2000 \div 6 = 333$ sisa $2$, maka nilai $a_{2000}$ sama dengan suku ke-2 yaitu $5$.</p>
+            <p><strong>Jawaban: 5</strong> <em>(Tidak tertera pada opsi di gambar)</em></p>
+        </div>
+    </div>
+
+    <!-- Nomor 8 -->
+    <div class="item">
+        <div class="question">
+            8. Jika $\frac{a}{b} = \frac{c}{d} = \frac{e}{f} = 64$, maka $\sqrt{\frac{5a^2c - 4a^2e + e^3}{5b^2d - 4b^2f + f^3}} = ....$
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Misalkan $k = 64$. Maka $a = bk$, $c = dk$, dan $e = fk$. Substitusikan ke dalam persamaan:</p>
+            <p>$\sqrt{\frac{5(bk)^2(dk) - 4(bk)^2(fk) + (fk)^3}{5b^2d - 4b^2f + f^3}} = \sqrt{\frac{k^3(5b^2d - 4b^2f + f^3)}{5b^2d - 4b^2f + f^3}}$</p>
+            <p>Variabel bisa dicoret, menyisakan $\sqrt{k^3}$.<br>
+            $\sqrt{64^3} = \sqrt{(2^6)^3} = \sqrt{2^{18}} = 2^9 = 512$.</p>
+            <p><strong>Jawaban: D (512)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 9 -->
+    <div class="item">
+        <div class="question">
+            9. Jika diketahui $x + \frac{1}{x} = -1$, maka nilai dari $x^{2001} + \frac{1}{x^{2001}} = ....$
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Kalikan $x + \frac{1}{x} = -1$ dengan $x$, menghasilkan $x^2 + x + 1 = 0$.</p>
+            <p>Jika dikalikan dengan $(x-1)$, diperoleh $(x-1)(x^2+x+1) = 0 \implies x^3 - 1 = 0 \implies x^3 = 1$.</p>
+            <p>Maka, persamaannya menjadi:<br> 
+            $x^{2001} + \frac{1}{x^{2001}} = (x^3)^{667} + \frac{1}{(x^3)^{667}} = (1)^{667} + \frac{1}{(1)^{667}} = 1 + 1 = 2$.</p>
+            <p><strong>Jawaban: E (2)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 10 -->
+    <div class="item">
+        <div class="question">
+            10. Andaikan $x = 0,123456789101112...999$ yang angkanya diperoleh dengan menuliskan berurutan dari 1 hingga 999. Angka ke 1983 di sebelah kanan desimal adalah ....
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Hitung digit secara terakumulasi:</p>
+            <ul>
+                <li>Angka 1-9 = 9 digit</li>
+                <li>Angka 10-99 = 90 bilangan $\times 2 = 180$ digit.</li>
+            </ul>
+            <p>Total sisa digit yang dibutuhkan untuk mencapai digit ke-1983: $1983 - (9 + 180) = 1794$ digit.</p>
+            <p>Karena bilangan selanjutnya (100+) menggunakan 3 digit, bagi sisanya dengan 3: $1794 \div 3 = 598$.<br>
+            Digit tersebut berada pada akhir (digit satuan) dari bilangan ke-598 yang terdiri atas tiga angka.</p>
+            <p>Bilangan tersebut adalah $100 + 598 - 1 = 697$. Digit terakhir dari 697 adalah 7.</p>
+            <p><strong>Jawaban: D (7)</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 11 -->
+    <div class="item">
+        <div class="question">
+            11. (OSK 2002) Tentukan bilangan $n$ terkecil sehingga setiap subhimpunan dari $\{1, 2, 3, ..., 20\}$ yang beranggotakan $n$ unsur pasti mengandung dua anggota yang selisihnya 7.
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Gunakan Prinsip Sarang Merpati. Susun bilangan ke dalam rantai-rantai yang berselisih 7:</p>
+            <ul>
+                <li>$\{1, 8, 15\}$, $\{2, 9, 16\}$, $\{3, 10, 17\}$, $\{4, 11, 18\}$, $\{5, 12, 19\}$, $\{6, 13, 20\}$ (6 himpunan, masing-masing maksimal bisa diambil 2 angka).</li>
+                <li>$\{7, 14\}$ (maksimal bisa diambil 1 angka).</li>
+            </ul>
+            <p>Maksimal angka yang dapat dipilih <em>tanpa ada</em> selisih 7 adalah $(6 \times 2) + 1 = 13$ angka.<br>
+            Maka bilangan minimum $n$ agar <em>pasti</em> ada pasangan berselisih 7 adalah $13 + 1 = 14$.</p>
+            <p><strong>Jawaban: 14</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 12 -->
+    <div class="item">
+        <div class="question">
+            12. (OSP 2005) Himpunan $A$ dan $B$ saling lepas dan $A \cup B = \{1, 2, 3, ..., 9\}$. Hasil perkalian semua unsur $A$ sama dengan jumlah unsur $B$. Unsur terkecil $B$ adalah ....
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Jumlah seluruh angka $1-9$ adalah 45. Misalkan jumlah unsur $A = S_A$, jumlah unsur $B = S_B$, dan perkalian unsur $A = P_A$.</p>
+            <p>Karena $A \cup B$ berisi angka 1 sampai 9 yang saling lepas, maka $S_A + S_B = 45$.<br>
+            Diketahui $P_A = S_B$, maka persamaannya: $S_A + P_A = 45$.</p>
+            <p>Eksplorasi kombinasi himpunan $A$. Jika $A = \{1, 4, 8\}$:<br>
+            $P_A = 1 \times 4 \times 8 = 32$<br>
+            $S_A = 1 + 4 + 8 = 13$<br>
+            $13 + 32 = 45$ (Memenuhi).</p>
+            <p>Maka sisa angka adalah himpunan $B = \{2, 3, 5, 6, 7, 9\}$. Unsur terkecilnya adalah 2.</p>
+            <p><strong>Jawaban: 2</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 13 -->
+    <div class="item">
+        <div class="question">
+            13. (OSP 2004) Berapakah banyaknya barisan bilangan bulat tak negatif $(x, y, z)$ yang memenuhi persamaan $x + y + z = 99$?
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Ini adalah kasus kombinatorika dengan pengulangan (<em>stars and bars</em>). Rumusnya adalah $\binom{n+k-1}{k-1}$.</p>
+            <p>Di mana $n = 99$ dan $k = 3$.<br>
+            $\binom{99+3-1}{3-1} = \binom{101}{2} = \frac{101 \times 100}{2} = 5050$.</p>
+            <p><strong>Jawaban: 5050</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 14 -->
+    <div class="item">
+        <div class="question">
+            14. (OSP 2002) Sebanyak $n$ orang pengurus sebuah organisasi akan dibagi ke dalam empat komisi mengikuti ketentuan berikut:<br>
+            (i) setiap anggota tergabung ke dalam tepat dua komisi, dan<br>
+            (ii) setiap dua komisi memiliki tepat satu anggota bersama. Berapakah $n$?
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Terdapat 4 komisi. Menurut syarat (ii), setiap 2 komisi memiliki irisan tepat 1 anggota. Banyak pasangan 2 komisi dari 4 komisi yang ada adalah $\binom{4}{2} = 6$ irisan unik.</p>
+            <p>Menurut syarat (i), tiap anggota hanya bergabung di 2 komisi, yang berarti 1 anggota merepresentasikan tepat 1 dari irisan-irisan tadi. Maka banyak anggotanya sama dengan banyak irisannya yaitu 6 orang.</p>
+            <p><strong>Jawaban: 6</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 15 -->
+    <div class="item">
+        <div class="question">
+            15. (OSP 2006) Sebuah himpunan tiga bilangan asli disebut himpunan aritmetika jika salah satu unsurnya merupakan rata-rata dari dua unsur lainnya. Banyaknya subhimpunan aritmetika dari $\{1, 2, 3, ..., 8\}$ adalah ....
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Bentuk barisan aritmetika 3 suku $(a, b, c)$ mensyaratkan $a + c = 2b$. Karena $2b$ hasilnya selalu genap, maka $a$ dan $c$ wajib punya sifat ganjil-genap (paritas) yang sama.</p>
+            <p>Himpunan $\{1, 2, ..., 8\}$ memiliki 4 angka ganjil dan 4 angka genap.</p>
+            <ul>
+                <li>Kombinasi ganjil: $\binom{4}{2} = 6$.</li>
+                <li>Kombinasi genap: $\binom{4}{2} = 6$.</li>
+            </ul>
+            <p>Setiap kombinasi unik ini pasti memiliki tepat 1 nilai $b$ di rentang yang sama. Total himpunan = $6 + 6 = 12$.</p>
+            <p><strong>Jawaban: 12</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 16 -->
+    <div class="item">
+        <div class="question">
+            16. (OSP 2007) Dona menyusun lima buah persegi yang kongruen menjadi sebuah bangun datar. Tidak ada persegi yang menindih persegi lainnya. Jika luas bangun yang diperoleh adalah 245 cm², keliling bangun tersebut paling sedikit adalah ... cm.
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Luas satu persegi adalah $245 \div 5 = 49 \text{ cm}^2$, sehingga sisi 1 perseginya ($s$) adalah 7 cm.</p>
+            <p>Agar keliling bangun 5 persegi minimal, bentuk potongannya harus se-kompak mungkin menempel satu sama lain, yaitu berbentuk P-pentomino (persegi panjang 2x3 dikurangi satu kotak sudut).</p>
+            <p>Keliling untuk formasi maksimal padat ini setara dengan $10 \times$ sisi.<br>
+            $10 \times 7 = 70 \text{ cm}$.</p>
+            <p><strong>Jawaban: 70</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 17 -->
+    <div class="item">
+        <div class="question">
+            17. (OSK 2006) Barisan naik $2, 3, 5, 6, 7, 10, 11, ...$ terdiri atas bilangan asli yang bukan kuadrat atau pangkat tiga. Cari suku ke-250 dari barisan tersebut.
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Untuk menemukan suku ke-250 ($N$), kita hitung berapa banyak bilangan kuadrat, pangkat tiga, dan irisannya (pangkat enam) yang dibuang hingga angka terdekat.</p>
+            <p>Jumlah angka hilang: $K = \lfloor\sqrt{N}\rfloor + \lfloor\sqrt[3]{N}\rfloor - \lfloor\sqrt[6]{N}\rfloor$.</p>
+            <p>Uji dengan estimasi $N = 270$:<br>
+            $K = \lfloor\sqrt{270}\rfloor + \lfloor\sqrt[3]{270}\rfloor - \lfloor\sqrt[6]{270}\rfloor = 16 + 6 - 2 = 20$.</p>
+            <p>Angka yang valid: $270 - 20 = 250$. Karena 270 bukan kuadrat maupun kubik, bilangan ke-250 adalah 270.</p>
+            <p><strong>Jawaban: 270</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 18 -->
+    <div class="item">
+        <div class="question">
+            18. (OSP 2005) Bilangan tiga angka terkecil yang merupakan bilangan kuadrat sempurna dan bilangan kubik (pangkat tiga) sempurna sekaligus adalah ....
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Bilangan tersebut merupakan bilangan pangkat enam sempurna, yakni $x^6$. Kita butuh bilangan yang nilainya berada di kisaran 100-999.</p>
+            <p>$2^6 = 64$ (salah, baru 2 angka)<br>
+            $3^6 = 729$ (benar, 3 angka)</p>
+            <p>Maka bilangan tersebut adalah 729.</p>
+            <p><strong>Jawaban: 729</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 19 -->
+    <div class="item">
+        <div class="question">
+            19. (OSP 2002) Ada berapa banyakkah bilangan 4 angka berbentuk $abcd$ dengan $a \le b \le c \le d$?
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Digit $a$ tidak boleh 0 agar sah menjadi 4 angka, dan himpunan angka yang mungkin adalah $\{1, 2, ..., 9\}$.</p>
+            <p>Kita hanya perlu memilih 4 angka dengan kemungkinan berulang. Tiap satu kelompok 4 angka pasti akan tersusun unik menyesuaikan syarat $\le$.</p>
+            <p>Gunakan kombinasi berulang: $\binom{n+r-1}{r}$ dengan $n=9, r=4$.<br>
+            $\binom{9+4-1}{4} = \binom{12}{4} = \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = 495$.</p>
+            <p><strong>Jawaban: 495</strong></p>
+        </div>
+    </div>
+
+    <!-- Nomor 20 -->
+    <div class="item">
+        <div class="question">
+            20. (OSP 2008) Tentukan banyaknya bilangan positif 5 angka palindrom yang habis dibagi 3.
+        </div>
+        <div class="answer">
+            <div class="answer-title">Penyelesaian:</div>
+            <p>Format angka = $abcba$, di mana $a \in \{1..9\}$ dan $b,c \in \{0..9\}$.</p>
+            <p>Syarat habis dibagi 3 berarti jumlah digit kelipatan 3: $a + b + c + b + a \equiv 0 \pmod 3$, yang disederhanakan menjadi $c \equiv a + b \pmod 3$.</p>
+            <p>Berdasarkan sisa bagi $(a+b)$:</p>
+            <ol>
+                <li>Jika $(a+b) \equiv 0 \pmod 3$ (ada 30 pasangan): $c$ memiliki 4 opsi $(0, 3, 6, 9)$. Hasil = $30 \times 4 = 120$.</li>
+                <li>Jika $(a+b) \equiv 1 \pmod 3$ (ada 30 pasangan): $c$ memiliki 3 opsi $(1, 4, 7)$. Hasil = $30 \times 3 = 90$.</li>
+                <li>Jika $(a+b) \equiv 2 \pmod 3$ (ada 30 pasangan): $c$ memiliki 3 opsi $(2, 5, 8)$. Hasil = $30 \times 3 = 90$.</li>
+            </ol>
+            <p>Total keseluruhan $120 + 90 + 90 = 300$ bilangan palindrom.</p>
+            <p><strong>Jawaban: 300</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>
